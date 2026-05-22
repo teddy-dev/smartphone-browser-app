@@ -14,6 +14,21 @@ This module requires [Smartphone Widget](https://foundryvtt.com/packages/smartph
 - The first page in this journal will be the browser's homepage. 
 - Each page will be its own website, with the name of the page being the address to access it. You should use a common prefix, such as `//` for (e.g `//home` and `//milkshake`).
 
+## 🔍 Build your own Search Engine
+Add the following snippet to the HTML of any browser Journal page.
+```
+<div id="browser-app-search"></div>
+<div id="browser-app-search-results"></div>
+```
+When rendered in the browser app, a search bar will appear and results will autopopulate in the results. You can add the following line to the top of any page to change the description in the search results.
+```
+<div id="browser-app-description">I go on the top line.</div>
+```
+You can add the following to ensure a page is not shown in search results.
+```
+<div id="browser-app-no-index"></div>
+```
+
 ## 📋 Notes
 - Currently supports text and image pages.
 - You can use native browser links to link between pages or use this format: `<span class="link" data-target="page">Link text</span>`
