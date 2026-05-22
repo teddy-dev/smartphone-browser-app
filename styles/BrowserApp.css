@@ -69,3 +69,15 @@
     margin-right: auto;
     width: 100%;
 }
+
+.browser-app .app-content .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin-bottom: 0.2rem;
+    padding: 0.75rem;
+}
+
+.browser-app .app-content #browser-app-no-index,
+.browser-app .app-content #browser-app-description {
+    display: none;
+}

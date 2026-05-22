@@ -13,9 +13,7 @@ export class BrowserApp extends BaseApp {
         this.lastAddress= null;
     }
 
-    static initialize(socket) { 
-        this.socket = socket; 
-    }
+    static initialize(socket) { this.socket = socket; }
 
     async render() {
         if (!SignalManager.hasSignal() && 
@@ -36,6 +34,7 @@ export class BrowserApp extends BaseApp {
             if (page) this.fetchWebpage(page)
             else this.notFound();
         }
+        return;
     }
 
     renderAppHeader() {
@@ -46,11 +45,13 @@ export class BrowserApp extends BaseApp {
             <button id="browser-app-go"><i class="fas fa-right-long"></i></button>
             <button id="browser-app-refresh"><i class="fas fa-arrows-rotate"></i></button>
         </div>`;
+        return;
     }
 
     async fetchWebpage(page) {
         const theme = game.settings.get(appId, 'theme');
         const body = (page.type === "text" ? page.text.content:`<img class="image" src="${page.src}"/>`)
+            .replace(`<div id="browser-app-search"></div>`,`<input type="text" id="browser-app-search" placeholder="${game.i18n.localize("BROWSERAPP.ui.placeholder.search")}" />`).trim();
         const content = `
             <div class="browser-app" data-theme="${theme}">
                 ${this.renderAppHeader()}
@@ -60,6 +61,7 @@ export class BrowserApp extends BaseApp {
             </div>
         `;
         this.updateContent(content);
+        return;
     }
 
     async notFound() {
@@ -74,6 +76,7 @@ export class BrowserApp extends BaseApp {
             </div>
         `;
         this.updateContent(content);
+        return;
     }
 
     async noSignal() {
@@ -88,12 +91,14 @@ export class BrowserApp extends BaseApp {
             </div>
         `;
         this.updateContent(content);
+        return;
     }
 
     navigateTo(address) {
         this.lastAddress = this.address;
         this.address = address;
         this.render();
+        return;
     }
 
     setupListeners() {
@@ -132,6 +137,35 @@ export class BrowserApp extends BaseApp {
                     goButton.click();
                 }
             })
+        }
+
+        const searchEngine = this.element.querySelector("#browser-app-search");
+        if (searchEngine) {
+            this.addListener(searchEngine, "keydown", (event) => {
+                const searchFor = searchEngine.value;
+                const regex = new RegExp(searchFor, "gi");
+                const results = [];
+
+                this.element.querySelector("#browser-app-search-results").innerHTML = "";
+
+
+                const journal = game.journal.getName(game.settings.get(appId, "journalName"));
+                if (journal) {
+                    journal.pages.forEach(page => {
+                        if ((page.text && regex.test(page.text.content) && !String(page.text.content).includes("browser-app-no-index")) || 
+                            (page.text && String(page.name).includes(searchFor))) {
+                            results.push(page);
+                        }
+                    });
+                }
+
+                if (results.length > 0) {
+                    results.forEach(result => {
+                        const description = new DOMParser().parseFromString(result.text.content, 'text/html').getElementById("browser-app-description")?.textContent || game.i18n.localize("BROWSERAPP.ui.error.results.description");
+                        this.element.querySelector("#browser-app-search-results").insertAdjacentHTML("beforeend", `<div class="card"><span class="link" data-target="${result.name}">${result.name}</span><br /><small>${description}</small></div>`)
+                    });
+                } else this.element.querySelector("#browser-app-search-results").innerHTML = game.i18n.localize("BROWSERAPP.ui.error.results.none");
+            });
         }
 
         const links = this.element.querySelectorAll(".link");
