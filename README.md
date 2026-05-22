@@ -20,5 +20,11 @@ This module requires [Smartphone Widget](https://foundryvtt.com/packages/smartph
 - Search Engine is planned but I need more time.
 - This module still isn't exactly where I want it but releasing it to get feedback.
 
+## 💾 Installing
+Use the manifest url to add the app:
+```
+https://raw.githubusercontent.com/teddy-dev/smartphone-browser-app/refs/heads/main/module.json
+```
+
 ## Support
 Support and updates available on my [Discord](https://discord.gg/SUgbgG8).
