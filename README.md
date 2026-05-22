@@ -1,6 +1,8 @@
 # 🌐 smartphone-browser-app
 An easy-to-setup Browser App for GlitchSmith's Smartphone Widget module that allows players to browse a Journal as webpages on their Smartphone.
 
+![Preview Image](https://i.imgur.com/OzcVNhL.png)
+
 This module requires [Smartphone Widget](https://foundryvtt.com/packages/smartphone-widget) module from [The Glitch Smith](https://www.patreon.com/cw/glitchsmith) as this is a custom-built app for the usable Smartphone Widget they created. 
 
 ## ☑️ Other Required Plugins
