@@ -20,7 +20,7 @@ Add the following snippet to the HTML of any browser Journal page.
 <div id="browser-app-search"></div>
 <div id="browser-app-search-results"></div>
 ```
-When rendered in the browser app, a search bar will appear and results will autopopulate in the results. You can add the following line to the top of any page to change the description in the search results.
+When rendered in the browser app, a search bar will appear and results will autopopulate in the second div. You can add the following line to the top of any page to change the description in the search results.
 ```
 <div id="browser-app-description">I go on the top line.</div>
 ```
