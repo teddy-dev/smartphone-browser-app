@@ -1,0 +1,39 @@
+{
+    "id": "smartphone-browser-app",
+    "title": "Smartphone - Browser App",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": "13",
+        "verified": "14"
+    },
+    "flags": {
+        "canUpload": false
+    },
+    "esmodules": [
+        "scripts/module.js"
+    ],
+    "languages": [{
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json"
+    }],
+    "styles": [
+        "styles/BrowserApp.css"
+    ],
+    "socket": true,
+    "relationships": {
+        "requires": [
+        {
+            "id": "smartphone-widget",
+            "type": "module",
+            "compatibility": {}
+        },
+        {
+            "id": "socketlib",
+            "type": "module",
+            "compatibility": {}
+        }
+    ]
+    },
+    "description": "An App for the Smartphone Widget to create an interactive browser."
+}

@@ -1,0 +1,71 @@
+[data-theme="cyberpunk"] {
+    --ba-bg-color: black;
+    --ba-text-color: #f3e600;
+    --ba-link-color: #55ead4;
+    --ba-hr-color: var(--ba-text-color);
+}
+
+[data-theme="neon"] {
+    --ba-bg-color: #091833;
+    --ba-text-color: #0abdc6;
+    --ba-link-color: #BC13FE;
+    --ba-hr-color: var(--ba-text-color);
+}
+
+.browser-app {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ba-bg-color);
+    height: 100%;
+}
+
+.browser-app .app-header {
+    padding: 0!important;
+}
+
+.browser-app .app-content { 
+    display: flex;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    gap: 0;
+    padding: 0;
+    scrollbar-width: none;
+    color: var(--ba-text-color);
+}
+
+.browser-app .app-content hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--ba-hr-color);
+}
+
+.browser-app .app-content::-webkit-scrollbar {
+    display: none;
+}
+
+.browser-app .app-content .link, 
+.browser-app .app-content a:link, 
+.browser-app .app-content a:visited,
+.browser-app .app-content a:hover,
+.browser-app .app-content a:active {
+    color: var(--ba-link-color);
+    cursor: pointer;
+    font-style: bold;
+    text-decoration: none;
+}
+
+.browser-app .app-header button,
+.browser-app .app-header input {
+    height: 2em;
+    min-height: 2em;
+    border: none;
+    border-radius: 0;
+}
+
+.browser-app .app-content .image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
