@@ -12,7 +12,7 @@ This module requires [Smartphone Widget](https://foundryvtt.com/packages/smartph
 - Enable the app by opening the Smartphone Widget, selecting **Settings** -> **App Store Settings** and then enabling **Browser**.
 - Create a Journal named "browserapp" (You can change this name in the module's settings.)
 - The first page in this journal will be the browser's homepage. 
-- The name of each page will be its own website. You should use a common prefix, such as `//` for (e.g `//home` and `//milkshake`.
+- Each page will be its own website, with the name of the page being the address to access it. You should use a common prefix, such as `//` for (e.g `//home` and `//milkshake`.
 
 ## 📋 Notes
 - Currently supports text and image pages.
