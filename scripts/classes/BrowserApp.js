@@ -38,7 +38,7 @@ export class BrowserApp extends BaseApp {
     }
 
     renderAppHeader() {
-        return `<div class="app-header">
+        return `<div class="app-header" style="border-bottom: 1px solid var(--ba-bg-color)!important;">
             <button id="browser-app-home"><i class="fas fa-home"></i></button>
             <button id="browser-app-back"><i class="fas fa-backward-step"></i></button>
             <input type="text" id="browser-app-address" value="${this.address}" />

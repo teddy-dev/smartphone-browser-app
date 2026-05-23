@@ -24,7 +24,11 @@ Hooks.once('setup', () => {
         type: String,
         choices: {
             "cyberpunk": "Cyberpunk",
-            "neon": "Neon"
+            "neon": "Neon",
+            "retrowave": "Retrowave",
+            "modern-dark": "Modern: Dark",
+            "modern-light": "Modern: Light",
+            "vampire": "Vampire"
         },
         default: "cyberpunk"
     });

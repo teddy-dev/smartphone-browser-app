@@ -2,14 +2,60 @@
     --ba-bg-color: black;
     --ba-text-color: #f3e600;
     --ba-link-color: #55ead4;
+    --ba-secondary-color: #772289;
     --ba-hr-color: var(--ba-text-color);
+    --ba-bg-dark: color-mix(in srgb, var(--ba-bg-color), black 20%);
+    --ba-bg-light: color-mix(in srgb, var(--ba-bg-color), white 20%);
 }
 
 [data-theme="neon"] {
     --ba-bg-color: #091833;
     --ba-text-color: #0abdc6;
     --ba-link-color: #BC13FE;
+    --ba-secondary-color: #9929EA;
     --ba-hr-color: var(--ba-text-color);
+    --ba-bg-dark: color-mix(in srgb, var(--ba-bg-color), black 20%);
+    --ba-bg-light: color-mix(in srgb, var(--ba-bg-color), white 10%);
+}
+
+[data-theme="retrowave"] {
+    --ba-bg-color: #01012b;
+    --ba-text-color: #ff2a6d;
+    --ba-link-color: #05d9e8;
+    --ba-secondary-color: #005678;
+    --ba-hr-color: var(--ba-text-color);
+    --ba-bg-dark: color-mix(in srgb, var(--ba-bg-color), black 20%);
+    --ba-bg-light: color-mix(in srgb, var(--ba-bg-color), white 10%);
+}
+
+[data-theme="modern-dark"] {
+    --ba-bg-color: #121212;
+    --ba-text-color: #FFFFFF;
+    --ba-link-color: #A8DADC;
+    --ba-secondary-color: #B39CD0;
+    --ba-hr-color: var(--ba-text-color);
+    --ba-bg-dark: color-mix(in srgb, var(--ba-bg-color), black 20%);
+    --ba-bg-light: color-mix(in srgb, var(--ba-bg-color), white 10%);
+}
+
+[data-theme="modern-light"] {
+    --ba-bg-color: #FBFBFB;
+    --ba-text-color: #202020;
+    --ba-link-color: #2e6477;
+    --ba-secondary-color: #C5BAFF;
+    --ba-hr-color: var(--ba-text-color);
+    --ba-bg-dark: color-mix(in srgb, var(--ba-bg-color), black 20%);
+    --ba-bg-light: color-mix(in srgb, var(--ba-bg-color), white 10%);
+}
+
+[data-theme="vampire"] {
+    --ba-bg-color: #1A0F12;
+    --ba-text-color: #B22A3A;
+    --ba-link-color: #7A0F1C;
+    --ba-secondary-color: #4A0B13;
+    --ba-hr-color: var(--ba-text-color);
+    --ba-bg-dark: color-mix(in srgb, var(--ba-bg-color), black 20%);
+    --ba-bg-light: color-mix(in srgb, var(--ba-bg-color), white 5%);
 }
 
 .browser-app {
@@ -21,6 +67,7 @@
 
 .browser-app .app-header {
     padding: 0!important;
+    margin-bottom: 15px;
 }
 
 .browser-app .app-content { 
@@ -55,12 +102,31 @@
     text-decoration: none;
 }
 
+.browser-app .app-content h1,
+.browser-app .app-content h2,
+.browser-app .app-content h3,
+.browser-app .app-content h4,
+.browser-app .app-content h5,
+.browser-app .app-content h6 {
+    color: var(--ba-text-color);
+}
+
+.browser-app .app-content tr:nth-child(even) {
+    background-color: var(--ba-bg-dark)!important;
+}
+
+.browser-app .app-content tr:nth-child(odd) {
+    background-color: var(--ba-bg-light)!important;
+}
+
 .browser-app .app-header button,
 .browser-app .app-header input {
     height: 2em;
     min-height: 2em;
-    border: none;
     border-radius: 0;
+    background-color: var(--ba-bg-dark);
+    color: var(--ba-text-color);
+    border: none;
 }
 
 .browser-app .app-content .image {
@@ -75,6 +141,24 @@
     transition: 0.3s;
     margin-bottom: 0.2rem;
     padding: 0.75rem;
+}
+
+.browser-app .app-content input[type="text"] {
+    background-color: var(--ba-bg-dark);
+    color: var(--ba-link-color);
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid var(--ba-secondary-color);
+    border-radius: 0!important;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-bottom: 5px;
+}
+
+.browser-app .app-content input[type="text"]::placeholder {
+    color: var(--ba-link-color);
+    font-style: italic;
 }
 
 .browser-app .app-content #browser-app-no-index,
