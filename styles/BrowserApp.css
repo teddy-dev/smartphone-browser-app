@@ -76,7 +76,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     gap: 0;
-    padding: 0;
+    padding: 5px;
     scrollbar-width: none;
     color: var(--ba-text-color);
 }
@@ -129,18 +129,18 @@
     border: none;
 }
 
-.browser-app .app-content .image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+.browser-app .app-content .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .browser-app .app-content .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 var(--ba-bg-dark);
     transition: 0.3s;
-    margin-bottom: 0.2rem;
-    padding: 0.75rem;
+    margin-bottom: 0.125rem;
+    padding: 0.5rem;
+    border: 1px solid var(--ba-hr-color);
 }
 
 .browser-app .app-content input[type="text"] {

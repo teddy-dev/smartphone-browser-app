@@ -50,7 +50,7 @@ export class BrowserApp extends BaseApp {
 
     async fetchWebpage(page) {
         const theme = game.settings.get(appId, 'theme');
-        const body = (page.type === "text" ? page.text.content:`<img class="image" src="${page.src}"/>`)
+        const body = (page.type === "text" ? page.text.content:`<div class="centered"><img src="${page.src}" width="100%"/></div>`)
             .replace(`<div id="browser-app-search"></div>`,`<input type="text" id="browser-app-search" placeholder="${game.i18n.localize("BROWSERAPP.ui.placeholder.search")}" />`).trim();
         const content = `
             <div class="browser-app" data-theme="${theme}">
@@ -148,13 +148,12 @@ export class BrowserApp extends BaseApp {
 
                 this.element.querySelector("#browser-app-search-results").innerHTML = "";
 
-
                 const journal = game.journal.getName(game.settings.get(appId, "journalName"));
                 if (journal) {
                     journal.pages.forEach(page => {
-                        if ((page.text && regex.test(page.text.content) && !String(page.text.content).includes("browser-app-no-index")) || 
-                            (page.text && String(page.name).includes(searchFor))) {
-                            results.push(page);
+                        if ((page.text && regex.test(new DOMParser().parseFromString(page.text.content, 'text/html').body.textContent)) || 
+                            (page.text && regex.test(page.name))) {
+                                if (!String(page.text.content).includes("browser-app-no-index")) results.push(page);
                         }
                     });
                 }

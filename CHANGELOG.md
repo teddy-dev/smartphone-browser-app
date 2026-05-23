@@ -1,3 +1,8 @@
+## [1.0.3] 2025-05-23
+- Fixed Search including HTML tags and properties.
+- Fixed Search being case-sensitive for title matching.
+- Fixed Search ignoring "browser-app-no-index" when result match was in title instead of content.
+
 ## [1.0.2] 2025-05-23
 - Added new a few new theme options.
 - Adjusted so more elements are affected by themes.
