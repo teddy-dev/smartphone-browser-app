@@ -33,7 +33,7 @@ You can add the following to ensure a page is not shown in search results.
 - Currently supports text and image pages.
 - You can use native browser links to link between pages or use this format: `<span class="link" data-target="page">Link text</span>`
 - Subpages do not currently matter but I am exploring how to implement them.
-- There are two themes currently, Cyberpunk and Neon.
+- There are multiple color themes.
 - This module still isn't exactly where I want it but releasing it to get feedback.
 
 ## 💾 Installing
