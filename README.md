@@ -15,7 +15,7 @@ This module requires [Smartphone Widget](https://foundryvtt.com/packages/smartph
 - Each page will be its own website, with the name of the page being the address to access it. You should use a common prefix, such as `//` for (e.g `//home` and `//milkshake`).
 
 ## 🔍 Build your own Search Engine
-Add the following snippet to the HTML of any browser Journal page.
+You can create a page to function as a Search Engine. This will allow players to search to find other pages via keywords. To create one, simply add the following snippet to the HTML of any browser Journal page.
 ```
 <div id="browser-app-search"></div>
 <div id="browser-app-search-results"></div>
