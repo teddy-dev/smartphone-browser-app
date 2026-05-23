@@ -35,5 +35,8 @@
         }
     ]
     },
-    "description": "An App for the Smartphone Widget to create an interactive browser."
+    "description": "An App for the Smartphone Widget to create an interactive browser.",
+    "url": "https://github.com/teddy-dev/smartphone-browser-app/",
+    "manifest": "https://raw.githubusercontent.com/teddy-dev/smartphone-browser-app/refs/heads/main/module.json",
+    "download": "https://raw.githubusercontent.com/teddy-dev/smartphone-browser-app/refs/heads/main/module.zip"
 }
